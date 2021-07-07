@@ -4,11 +4,53 @@ const h1 = document.querySelector("h1");
 h1.style.color = "gray";
 h1.style.fontFamily = "Impact,Charcoal,sans-serif";
 h1.style.fontSize = "4rem";
-h1.addEventListener("focus", function (e) {
-  e.target.style.background = "pink";
+const navs = document.querySelectorAll(".nav-link");
+for (let nav of navs) {
+  nav.style.backgroundColor = "#ccffff";
+  nav.style.padding = "10px 25px 10px 25px";
+  nav.style.borderRadius = "10px";
+  nav.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+  nav.style.margin = "15px";
+  nav.style.textDecoration = "none";
+  nav.addEventListener("mouseover", () => {
+    nav.style.backgroundColor = "#adebeb";
+    nav.style.fontSize = "1.5rem";
+  });
+  nav.addEventListener("mouseout", () => {
+    nav.style.fontSize = "1rem";
+    nav.style.backgroundColor = "";
+  });
+}
+const headerContainer = document.querySelector(".nav-container");
+headerContainer.style.display = "flex";
+headerContainer.style.justifyContent = "space-around";
+headerContainer.style.alignItems = "center";
+
+// headerContainer.appendChild(form);
+//navbar
+
+//intro
+const intro = document.querySelector(".intro");
+const h2 = document.querySelector("h2");
+const home = document.querySelector(".home");
+const backgroundChanging = (e) => {
+  e.stopPropagation();
+  e.target.style.backgroundColor = "lightblue";
+};
+h2.addEventListener("click", backgroundChanging);
+intro.addEventListener("click", function () {
+  intro.style.opacity = 0.5;
+});
+h2.addEventListener("mouseout", function () {
+  intro.style.opacity = 1;
 });
 
-//h2
+const imgIntro = document.querySelector(".intro img");
+// console.log(imgDestination);
+imgIntro.style.width = "100%";
+//form
 
 const el = document.createElement("input");
 el.type = "text";
@@ -36,29 +78,15 @@ var submit = document.createElement("input");
 submit.type = "submit";
 submit.value = "log in";
 const form = document.createElement("form");
-// form.setAttribute("method", "post");
-// form.setAttribute("action", "submit.php");
+
 form.appendChild(el);
 form.appendChild(el2);
 form.appendChild(submit);
-h1.appendChild(form);
-//navbar
+form.style.marginBottom = "10px";
+form.style.display = "flex";
+form.style.justifyContent = "flex-end";
+home.prepend(form);
 
-const navs = document.querySelectorAll(".nav-link");
-for (let nav of navs) {
-  nav.style.margin = "15px";
-  nav.style.textDecoration = "none";
-  nav.addEventListener("mouseover", () => {
-    nav.style.fontSize = "1.5rem";
-  });
-  nav.addEventListener("mouseout", () => {
-    nav.style.fontSize = "1rem";
-  });
-}
-//introImg
-const imgIntro = document.querySelector(".intro img");
-// console.log(imgDestination);
-imgIntro.style.width = "100%";
 //text-content
 const textContents = document.querySelectorAll(".text-content");
 // console.log(textContents);
@@ -90,8 +118,7 @@ firstContentSection.style.margin = "50px";
 
 const secondContentSection = document.querySelector(".inverse-content");
 secondContentSection.style.display = "flex";
-secondContentSection.style.marginLeft = "50px";
-secondContentSection.style.marginRight = "50px";
+secondContentSection.style.margin = "50px";
 
 //destination
 const allDestination = document.querySelectorAll(".destination");
