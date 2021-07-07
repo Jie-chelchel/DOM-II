@@ -20,7 +20,7 @@ for (let nav of navs) {
   });
   nav.addEventListener("mouseout", () => {
     nav.style.fontSize = "1rem";
-    nav.style.backgroundColor = "";
+    nav.style.backgroundColor = "#ccffff";
   });
 }
 const headerContainer = document.querySelector(".nav-container");
@@ -107,17 +107,21 @@ for (let content of textContents) {
 const imgContents = document.querySelectorAll(".img-content");
 // console.log(imgContents);
 for (let img of imgContents) {
-  img.style.width = "48%";
   img.style.marginLeft = "10px";
   img.style.marginRight = "10px";
 }
 
 const firstContentSection = document.querySelector(".content-section");
 firstContentSection.style.display = "flex";
+firstContentSection.style.flexWrap = "wrap";
+firstContentSection.style.justifyContent = "center";
+
 firstContentSection.style.margin = "50px";
 
 const secondContentSection = document.querySelector(".inverse-content");
 secondContentSection.style.display = "flex";
+secondContentSection.style.flexWrap = "wrap";
+secondContentSection.style.justifyContent = "center";
 secondContentSection.style.margin = "50px";
 
 //destination
