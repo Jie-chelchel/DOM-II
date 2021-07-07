@@ -4,7 +4,44 @@ const h1 = document.querySelector("h1");
 h1.style.color = "gray";
 h1.style.fontFamily = "Impact,Charcoal,sans-serif";
 h1.style.fontSize = "4rem";
+h1.addEventListener("focus", function (e) {
+  e.target.style.background = "pink";
+});
 
+//h2
+
+const el = document.createElement("input");
+el.type = "text";
+el.name = "user_name";
+el.id = "user_name1";
+el.placeholder = "username";
+el.addEventListener("focus", () => {
+  el.style.background = "pink";
+});
+el.addEventListener("blur", () => {
+  el.style.background = "";
+});
+const el2 = document.createElement("input");
+el2.type = "password";
+el2.name = "password";
+el2.id = "password1";
+el2.placeholder = "password";
+el2.addEventListener("focus", () => {
+  el2.style.background = "pink";
+});
+el2.addEventListener("blur", () => {
+  el2.style.background = "";
+});
+var submit = document.createElement("input");
+submit.type = "submit";
+submit.value = "log in";
+const form = document.createElement("form");
+// form.setAttribute("method", "post");
+// form.setAttribute("action", "submit.php");
+form.appendChild(el);
+form.appendChild(el2);
+form.appendChild(submit);
+h1.appendChild(form);
 //navbar
 
 const navs = document.querySelectorAll(".nav-link");
